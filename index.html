@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-DOM | O'quv Markazi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo"><img src="./img/IT-logo2-png.jpg" alt="IT-DOM"></div>
+            <div class="lang-switcher">
+                <span id="uzb-btn" class="active" onclick="changeLang('uz')">UZ</span>
+                <span id="rus-btn" onclick="changeLang('ru')">RU</span>
+            </div>
+        </header>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <h2 class="lang-res-h">IT-DOM NATIJALARI</h2>
+                        <p class="lang-res-p">O'quvchilarimiz erishgan natijalar bilan tanishing.</p>
+                        <a href="https://t.me/results_ayti_dom" class="results-link lang-res-b">Natijalarni ko'rish</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <h2 class="lang-des-h">GRAFIK DIZAYN</h2>
+                        <p class="lang-des-p">Kreativ g'oyalaringizni professional darajaga olib chiqing.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <h2 class="lang-front-h">FRONTEND DEVELOPER</h2>
+                        <p class="lang-front-p">9 oyda professional veb-dasturchiga aylaning!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <section class="form-section">
+            <h2 class="lang-form-h"><span>IT NI</span>ni <br> o'rganmoqchimisiz?</h2>
+            <form id="leadForm">
+                <div class="selection-box">
+                    <p class="lang-course-l">Yo'nalishni tanlang:</p>
+                    <div class="checkbox-wrapper">
+                        <label class="item">
+                            <input type="checkbox" name="course" value="frontend">
+                            <span class="box"></span> Frontend
+                        </label>
+                        <label class="item">
+                            <input type="checkbox" name="course" value="design">
+                            <span class="box"></span> Grafik Dizayn
+                        </label>
+                    </div>
+                </div>
+                <input type="text" placeholder="Ism familiya" required>
+                <div class="phone-input">
+                    <span class="prefix">+998</span>
+                    <input type="tel" placeholder="12 345 67 89" required>
+                </div>
+                <button type="submit" class="compact-btn lang-sub-b">YUBORISH</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

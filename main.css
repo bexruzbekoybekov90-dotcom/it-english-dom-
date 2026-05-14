@@ -1,0 +1,315 @@
+/* 1. FOYDALANILADIGAN SHRIFT VA O'ZGARUVCHILAR */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+
+/* Mobil qurilmalarda qimirlab ketmasligi uchun (App-like fix) */
+/* 0. QIMIRLASHNI TO'XTATISH (FORCE FIX) */
+html,
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    /* Gorizontal qimirlashni butunlay yopadi */
+    position: relative !important;
+    touch-action: pan-y;
+    /* Faqat tepaga-pastga yurishga ruxsat beradi */
+}
+
+/* Konteynerni ekranga mixlash */
+.container {
+    width: 100% !important;
+    max-width: 400px;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    /* Ichidagi elementlar tashqariga chiqsa, kesib tashlaydi */
+}
+
+/* Swiper ba'zan chetdan chiqib ketadi, shuni jilovlaymiz */
+.mySwiper {
+    width: auto !important;
+    /* Avtomashina kengligi */
+    max-width: calc(100% - 40px) !important;
+    /* Paddinglarni hisobga olgan holda */
+}
+
+:root {
+    --main-blue: #001f5c;
+    --main-orange: #ffb400;
+    --bg-body: #dee5ef;
+    --bg-card: #ffffff;
+    --bg-input: #f8faff;
+    --text-main: #1a1a1a;
+    --text-muted: #666;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 4px 12px rgba(0, 31, 92, 0.08);
+    --shadow-lg: 0 20px 40px rgba(0, 31, 92, 0.12);
+}
+
+/* 2. ASOSIY RESET VA BODY */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 3. KONTEYNER (MOBIL QURILMALAR UCHUN OPTIMALLASHGAN) */
+.container {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+/* 4. HEADER (LOGO VA TIL TANLASH) */
+header {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Vertikal markazlash - rasmda xato edi */
+}
+
+.logo img {
+    height: 34px;
+    object-fit: contain;
+}
+
+.lang-switcher {
+    background: #f0f3f8;
+    padding: 4px;
+    border-radius: 14px;
+    display: flex;
+    gap: 2px;
+}
+
+.lang-switcher span {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lang-switcher span.active {
+    background: var(--bg-card);
+    color: var(--main-blue);
+    box-shadow: var(--shadow-sm);
+}
+
+/* 5. SWIPER SLAYDER (VIZUAL EFFEKTLAR BILAN) */
+.mySwiper {
+    height: 220px;
+    margin: 0 20px;
+    border-radius: 24px;
+    background: var(--main-blue);
+    position: relative;
+    box-shadow: 0 12px 24px rgba(0, 31, 92, 0.2);
+}
+
+.slide-content {
+    padding: 32px 28px;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.slide-content h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.slide-content p {
+    font-size: 0.88rem;
+    opacity: 0.9;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.results-link {
+    background: var(--main-orange);
+    color: var(--main-blue);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.results-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 180, 0, 0.4);
+}
+
+/* 6. FORMA QISMI (INPUT VA CHECKBOX) */
+.form-section {
+    padding: 28px 24px;
+}
+
+.form-section h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--main-blue);
+    margin-bottom: 24px;
+    line-height: 1.15;
+}
+
+.form-section h2 span {
+    color: var(--main-orange);
+}
+
+/* Tanlov (Checkbox) qismi */
+.selection-box p {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: var(--bg-input);
+    border: 1.5px solid #edf2f7;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.item:hover {
+    border-color: var(--main-orange);
+}
+
+.box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #cbd5e0;
+    border-radius: 7px;
+    transition: var(--transition);
+    background: #fff;
+}
+
+.item input {
+    display: none;
+}
+
+.item input:checked+.box {
+    background: var(--main-orange);
+    border-color: var(--main-orange);
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* Inputlar (ism va telefon) */
+input[type="text"],
+.phone-input {
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    background: var(--bg-input);
+    border: 1.5px solid var(--main-blue);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.phone-input {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 56px;
+}
+
+.prefix {
+    font-weight: 800;
+    color: var(--main-blue);
+    padding-right: 12px;
+    border-right: 2px solid #d1d9e2;
+}
+
+.phone-input input {
+    border: none !important;
+    outline: none !important;
+    background: transparent;
+    padding-left: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+input:focus,
+.phone-input:focus-within {
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 31, 92, 0.06);
+}
+
+/* 7. PREMIUM YUBORISH TUGMASI */
+.compact-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--main-blue);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.compact-btn:hover {
+    background: #002d85;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 31, 92, 0.25);
+}
+
+.compact-btn:active {
+    transform: scale(0.97);
+}
+
+/* 8. SWIPER PAGINATION CUSTOM */
+.swiper-pagination-bullet {
+    background: #fff !important;
+    opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--main-orange) !important;
+    width: 22px !important;
+    border-radius: 10px !important;
+    opacity: 1;
+}
